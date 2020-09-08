@@ -7,16 +7,18 @@ class Node:
     self.parent = parent
 
 def printStatesActions(goal):
-    print('\nPATH:')
-    path=[]
-    while goal!=None:
+    path = []
+    while goal != None:
         path.append(goal.state)
-        goal=goal.parent
+        goal = goal.parent
+    print('\nLENGTH OF THE PATH: ',len(path),'\n')
     path.reverse()
+    print('PATH:\n')
     for x in range(len(path)-1):
-        print(path[x],end=' ---> ')
-    x+=1
-    print(path[x])  
+        print(path[x], end=' ---> ')
+    x += 1
+    print(path[x])
+
 
 def next_states(cs):
     neighbors=[]
