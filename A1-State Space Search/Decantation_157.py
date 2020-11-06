@@ -45,10 +45,10 @@ def next_states(cs):
         toJar=x[1]  #contains 0 or 1 or 2
         newState=currentState[:]
         remainingCapacity=maxCapacity[toJar]-currentState[toJar]
-        if(currentState[fromJar]>=remainingCapacity):#can empty contents of from jar into to jar such that from jar becomes empty
+        if(currentState[fromJar]>=remainingCapacity):#can fill the to jar but from jar is still not empty
             newState[fromJar]=currentState[fromJar]-remainingCapacity
             newState[toJar]=maxCapacity[toJar]
-        else:#can fill the to jar but from jar is still not empty
+        else:#can empty contents of from jar into to jar such that from jar becomes empty
             newState[toJar]=currentState[toJar]+currentState[fromJar]   
             newState[fromJar]=0     
         if(newState!=currentState):
