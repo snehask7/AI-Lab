@@ -51,9 +51,8 @@ def next_states(cs):
         else:#can empty contents of from jar into to jar such that from jar becomes empty
             newState[toJar]=currentState[toJar]+currentState[fromJar]   
             newState[fromJar]=0     
-        if(newState!=currentState):
-            newNode=Node(newState,cs)
-            neighbors.append(newNode)
+        newNode=Node(newState,cs)
+        neighbors.append(newNode)
     return neighbors
 
 #Returns true if the node is a goal state
