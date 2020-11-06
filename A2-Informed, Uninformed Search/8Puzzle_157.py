@@ -102,11 +102,11 @@ def BFS(initial):
         return initial
     while len(frontier) != 0:
         node = frontier.popleft()
+        explored.add(tuple(tuple(j) for j in node.state))
         for neighbor in next_states(node):
             if(isGoalState(neighbor)):
                 return neighbor
-            if tuple(tuple(j) for j in neighbor.state) not in explored:
-                explored.add(tuple(tuple(j) for j in neighbor.state))
+            if tuple(tuple(j) for j in neighbor.state) not in explored:                
                 frontier.append(neighbor)
 
 
